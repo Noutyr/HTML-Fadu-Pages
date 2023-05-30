@@ -10,31 +10,36 @@ HTML tiene de base el color del comentario del inicio (gris)
 */
 
 body {
-    background-color: #202129;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 11pt;
-    color: rgb(117, 112, 112);/*
+  background-color: #1e1f24;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11pt;
+  color: rgb(117, 112, 112); /*
     padding-left: 10%;
     padding-right: 10%;*/
-    line-height: normal;
+  line-height: normal;
 }
 
-.proc{ /*Procesamiento del robot*/
-    color: rgb(148, 119, 155);
+.proc {
+  /*Procesamiento del robot*/
+  color: rgb(148, 119, 155);
 }
 
-.procd{/*Destacado del procesamiento del robot*/
-    color: rgb(211, 164, 243);
+.procd {
+  /*Destacado del procesamiento del robot*/
+  color: rgb(211, 164, 243);
 }
 
-.green{ /*Detalles importantes para la historia*/
-    color: rgb(0, 255, 0);
+.green {
+  /*Detalles importantes para la historia*/
+  color: rgb(0, 255, 0);
 }
 
-.red{ /* ""Errores"" entre muchas comillas*/
-    color: rgb(255, 0, 0);
+.red {
+  /* ""Errores"" entre muchas comillas*/
+  color: rgb(255, 0, 0);
 }
 
-.chat {/*Se usa para los dialogos*/
-    color: rgb(236, 148, 253);
+.chat {
+  /*Se usa para los dialogos*/
+  color: rgb(245, 255, 112);
 }
