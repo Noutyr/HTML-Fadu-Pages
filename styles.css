@@ -10,10 +10,10 @@ HTML tiene de base el color del comentario del inicio (gris)
 */
 
 body {
-  background-color: #191d2c;
+  background-color: #0e034e;
   font-family: "Cutive Mono", monospace;
-  font-size: 12pt;
-  color: rgb(177, 153, 153); /*
+  font-size: 11pt;
+  color: rgb(187, 135, 135); /*
     padding-left: 10%;
     padding-right: 10%;*/
   line-height: normal;
@@ -21,17 +21,17 @@ body {
 
 .proc {
   /*Procesamiento del robot*/
-  color: rgb(85, 105, 110);
+  color: rgb(153, 76, 172);
 }
 
 .procd {
   /*Destacado del procesamiento del robot*/
-  color: rgb(121, 130, 255);
+  color: rgb(0, 204, 255);
 }
 
 .story {
   /*Detalles importantes para la historia*/
-  color: rgb(235, 0, 243);
+  color: rgb(0, 255, 0);
 }
 
 .red {
@@ -41,5 +41,5 @@ body {
 
 .chat {
   /*Se usa para los dialogos*/
-  color: rgb(0, 255, 85);
+  color: rgb(245, 255, 112);
 }
