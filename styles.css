@@ -12,7 +12,7 @@ HTML tiene de base el color del comentario del inicio (gris)
 body {
   background-color: #0e034e;
   font-family: "Cutive Mono", monospace;
-  font-size: 11pt;
+  font-size: 12pt;
   color: rgb(187, 135, 135); /*
     padding-left: 10%;
     padding-right: 10%;*/
