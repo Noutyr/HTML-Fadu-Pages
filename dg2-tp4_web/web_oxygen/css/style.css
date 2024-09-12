@@ -1,6 +1,6 @@
-@font-face {
+/*@font-face {
   font-family: "icomoon";
-}
+}*/
 /* =======================================================
 *
 * 	Template Style 
@@ -74,9 +74,8 @@ h4,
 h5,
 h6,
 figure {
-  color: #000;
+  color: #000000;
   font-family: "Exo 2", "Open Sans", "Noto Sans", "Roboto", Verdana, sans-serif;
-    sans-serif;
   font-weight: 600;
   margin: 0 0 20px 0;
 }
@@ -223,7 +222,7 @@ figure {
   color: #61534d;
 }
 .gtco-nav ul li.btn-cta a span {
-  background: #FFC37F;
+  background: #ffc37f;
   padding: 4px 20px;
   display: -moz-inline-stack;
   display: inline-block;
@@ -240,11 +239,9 @@ figure {
 .gtco-nav ul li.btn-cta a:hover span {
   color: #61534d;
   background: #ffffff;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(255,255,255,1);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(255,255,255,1);
-  box-shadow: 0px 0px 15px 0px rgba(255,255,255,1);
-
-  
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 1);
 }
 .gtco-nav ul li.active > a {
   color: #fff !important;
@@ -513,7 +510,7 @@ form label {
 #gtco-counter .display-tc h1,
 #gtco-counter .display-tc h2,
 .gtco-cover .display-tc h1,
-.gtco-cover .display-tc h2{
+.gtco-cover .display-tc h2 {
   margin: 0;
   padding: 0;
   color: white;
@@ -1456,11 +1453,3 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
-
-.logo-full{
-  display:none;
-}
-
-.logo-mini{
-  display:none;
-}
