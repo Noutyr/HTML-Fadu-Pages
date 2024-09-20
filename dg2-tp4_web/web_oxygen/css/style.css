@@ -76,7 +76,7 @@ h6,
 figure {
   color: #000000;
   font-family: "Exo 2", "Open Sans", "Noto Sans", "Roboto", Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 20px 0;
 }
 
@@ -101,6 +101,26 @@ figure {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+ul.sq {
+  list-style-type: none;
+}
+
+ul.sq > li{
+  line-height: 2.75em;
+}
+
+.bullet{
+  line-height: 2.3;
+}
+
+.ul-bullet {
+  background-color: #ff8800;
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  margin-right: .5em;
 }
 
 .gtco-nav {
@@ -321,7 +341,7 @@ figure {
 }
 
 .gtco-cover {
-  height: 900px;
+  height: 1000px;
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -540,17 +560,19 @@ form label {
 #gtco-header .display-tc .btn,
 #gtco-counter .display-tc .btn,
 .gtco-cover .display-tc .btn {
-  padding: 15px 30px;
-  background: #fff !important;
-  color: #ff8800;
-  border: none !important;
+  padding: 10tpx 28px;
+  background: transparent !important;
+  color: #ffffff;
+  border: 1 !important;
   font-size: 18px;
   text-transform: uppercase;
 }
 #gtco-header .display-tc .btn:hover,
 #gtco-counter .display-tc .btn:hover,
 .gtco-cover .display-tc .btn:hover {
-  background: #fff !important;
+  color: #ff8800;
+  border-color: #ff8800;
+  background: transparent !important;
   -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
   -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
   box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
@@ -566,12 +588,22 @@ form label {
   font-weight: 100;
   display: block;
 }
+#gtco-counter h2{  
+  font-size: 35px !important;
+  margin-bottom: 10px !important;
+  color: #fff;
+  font-weight: 100;
+  display: block;
+}
+
 #gtco-counter .counter-label {
   margin-bottom: 0;
-  text-transform: uppercase;
+  /**text-transform: uppercase;**/
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.1em;
 }
+
+
 @media screen and (max-width: 768px) {
   #gtco-counter .feature-center {
     margin-bottom: 50px;
@@ -996,6 +1028,11 @@ form label {
   background: transparent;
   border: 2px solid #ff8800;
 }
+
+.flyimg{
+  position:absolute;
+  right:0;
+  }
 
 #gtco-offcanvas {
   position: absolute;
@@ -1445,7 +1482,7 @@ form label {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url(../images/loader.gif) center no-repeat #fff;
+  background: url(../images/loader.svg) center no-repeat #fff;
 }
 
 .js .animate-box {
