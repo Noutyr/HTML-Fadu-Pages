@@ -37,6 +37,7 @@
             margin-left: 15px;
             justify-content: center;
             text-align: center;
+            display: none;
         }
 
         /* Color y cosas*/
@@ -142,6 +143,7 @@
         .container {
             cursor: url(./images/cursor/cur_0.png), auto;
             animation: cursor-idle 1.2s infinite;
+
         }
 
         @keyframes cursor-idle {
@@ -209,6 +211,11 @@
             background-position: center;
             animation: LinearMove 2s linear infinite;
             -webkit-font-smoothing: none;
+
+            /*Font*/
+            font-family: "Tiny5", sans-serif;
+            font-weight: 400;
+            font-style: normal;
         }
 
 
@@ -492,42 +499,6 @@
     </script>
 
     <!-- Page Content -->
-    <div class="container" id="pop-up">
-        <div class="row">
-            <div class="win-header">
-                <div class="win-header-text">
-                    <h2>Autenticación de docente</h2>
-                </div>
-                <div class="win-control">
-                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
-                        onmouseover="document.getElementById('SFX1').play()">
-                        <div class="square">x</div>
-                    </a>
-                </div>
-            </div>
-            <div class="text-center win">
-                <h1 class="ani-float">Alto ahí</h1>
-                <h2 class="lead">¿Estás seguro de ver una entrega con <strong class="rain-text">muchisimo</strong>
-                    flasheo en la intro?</h2>
-                <script>function showContent() {
-                        document.getElementById('miniweb').style.cssText = 'display:flex;';
-                        document.getElementById('pop-up').style.cssText = 'display:none;';
-                        document.getElementById('body-bg').style.cssText = 'background-image: url(bg.png);';
-                    }</script>
-                <p style="margin-top:25px">
-                    <span class="btn btn-primary btn-lg" onmouseover="document.getElementById('SFX1').play()"
-                        onclick="showContent();">Entrar</span>
-                </p>
-            </div>
-            <!-- /.row -->
-
-        </div>
-    </div>
-
-
-
-
-
     <div class="container" id="miniweb">
 
         <div class="row">
@@ -554,7 +525,8 @@
                 <a href="https://www.youtube.com/watch?v=Rlyv51h18tQ"
                     onmouseover="document.getElementById('SFX1').play()"><img class="ani-float"
                         src="https://i.imgur.com/Pgai5Xj.gif"></a><br>
-                <audio id="music" controls autoplay preload loop controlsList="nodownload noplaybackrate novolume">
+                <audio id="music" controls autoplay preload="auto" loop
+                    controlsList="nodownload noplaybackrate novolume">
                     <source src="REEEEEEE.mp3" type="audio/mpeg" class="aaud" />
                 </audio>
                 <!-- Audio volume -->
@@ -595,6 +567,41 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+    </div>
+
+    <div class="container" id="pop-up">
+        <div class="row">
+            <div class="win-header">
+                <div class="win-header-text">
+                    <h2>Autenticación de docente</h2>
+                </div>
+                <div class="win-control">
+                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
+                        onmouseover="document.getElementById('SFX1').play()">
+                        <div class="square">x</div>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center win">
+                <h1 class="ani-float">Alto ahí</h1>
+                <h2 class="lead">¿Estás seguro de ver una entrega con <strong class="rain-text">muchisimo</strong>
+                    flasheo en la intro?</h2>
+                <p>PD: Tiene música</p>
+                <script>function showContent() {
+                        document.getElementById('miniweb').style.cssText = 'display:flex;';
+                        document.getElementById('pop-up').style.cssText = 'display:none;';
+                        document.getElementById('body-bg').style.cssText = 'background-image: url(bg.png);';
+                        document.getElementById('music').play();
+                    }
+                </script>
+                <p style="margin-top:25px">
+                    <span class="btn btn-primary btn-lg" onmouseover="document.getElementById('SFX1').play()"
+                        onclick="showContent();">Entrar</span>
+                </p>
+            </div>
+            <!-- /.row -->
+
+        </div>
     </div>
 
 </body>
