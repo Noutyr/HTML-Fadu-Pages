@@ -203,10 +203,9 @@
         }
 
         body {
-            background-image: url(bg.png);
+
             background-size: 52px;
-            background-blend-mode: multiply;
-            background-color: #bcc7d4;
+            background-color: #2e2e46;
             background-position: center;
             animation: LinearMove 2s linear infinite;
             -webkit-font-smoothing: none;
@@ -412,6 +411,10 @@
             transition-duration: 0.5s;
         }
 
+        .rain-text {
+            animation: rainbow-text 1s linear infinite;
+        }
+
         @keyframes rainbow-border {
             0% {
                 border: 3px rgb(52, 52, 255) inset;
@@ -470,15 +473,62 @@
             transition-duration: 0.5s;
             animation: cursor-click 0.5s infinite;
         }
+
+        #miniweb {
+            display: none;
+        }
+
+        #body-bg {
+            background-image: none;
+        }
     </style>
 </head>
 
-<body>
-
-
+<body id="body-bg">
+    <audio id="SFX1" src="https://files.catbox.moe/l8ysdy.wav" type="audio/wav" preload="auto"></audio>
+    <script>
+        var audio = document.getElementById("SFX1");
+        audio.volume = 0.05;
+    </script>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container" id="pop-up">
+        <div class="row">
+            <div class="win-header">
+                <div class="win-header-text">
+                    <h2>Autenticación de docente</h2>
+                </div>
+                <div class="win-control">
+                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
+                        onmouseover="document.getElementById('SFX1').play()">
+                        <div class="square">x</div>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center win">
+                <h1 class="ani-float">Alto ahí</h1>
+                <h2 class="lead">¿Estás seguro de ver una entrega con <strong class="rain-text">muchisimo</strong>
+                    flasheo en la intro?</h2>
+                <script>function showContent() {
+                        document.getElementById('miniweb').style.cssText = 'display:flex;';
+                        document.getElementById('pop-up').style.cssText = 'display:none;';
+                        document.getElementById('body-bg').style.cssText = 'background-image: url(bg.png);';
+                    }</script>
+                <p style="margin-top:25px">
+                    <span class="btn btn-primary btn-lg" onmouseover="document.getElementById('SFX1').play()"
+                        onclick="showContent();">Entrar</span>
+                </p>
+            </div>
+            <!-- /.row -->
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container" id="miniweb">
 
         <div class="row">
             <div class="win-header">
@@ -486,19 +536,23 @@
                     <h2>Belluccia II</h2>
                 </div>
                 <div class="win-control">
-                    <a href="https://www.youtube.com/watch?v=qfxDEZX9K0o">
+                    <a href="https://www.youtube.com/watch?v=qfxDEZX9K0o"
+                        onmouseover="document.getElementById('SFX1').play()">
                         <div class="square">—</div>
                     </a>
-                    <a href="https://www.youtube.com/watch?v=SNEYkytd0es">
+                    <a href="https://www.youtube.com/watch?v=SNEYkytd0es"
+                        onmouseover="document.getElementById('SFX1').play()">
                         <div class="square">◻︎</div>
                     </a>
-                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0">
+                    <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
+                        onmouseover="document.getElementById('SFX1').play()">
                         <div class="square">x</div>
                     </a>
                 </div>
             </div>
             <div class="text-center win">
-                <a href="https://www.youtube.com/watch?v=Rlyv51h18tQ"><img class="ani-float"
+                <a href="https://www.youtube.com/watch?v=Rlyv51h18tQ"
+                    onmouseover="document.getElementById('SFX1').play()"><img class="ani-float"
                         src="https://i.imgur.com/Pgai5Xj.gif"></a><br>
                 <audio id="music" controls autoplay preload loop controlsList="nodownload noplaybackrate novolume">
                     <source src="REEEEEEE.mp3" type="audio/mpeg" class="aaud" />
@@ -513,13 +567,16 @@
                 <h2 class="lead">Entrega Ejercicio Web de Producto</h2>
                 <p style="margin-top:25px">
                     <a class="btn btn-primary btn-lg"
-                        href="https://noutyr.github.io/HTML-Fadu-Pages/dg2-tp4_web/web_oxygen/index.html">Sitio
+                        href="https://noutyr.github.io/HTML-Fadu-Pages/dg2-tp4_web/web_oxygen/index.html"
+                        onmouseover="document.getElementById('SFX1').play()">Sitio
                         desarrollado</a>
                     <a class="btn btn-default btn-lg"
-                        href="https://freehtml5.co/preview/?item=oxygen-free-website-template-using-bootstrap">Template
+                        href="https://freehtml5.co/preview/?item=oxygen-free-website-template-using-bootstrap"
+                        onmouseover="document.getElementById('SFX1').play()">Template
                         OXYGEN</a>
                 </p>
-                <a href="https://www.youtube.com/watch?v=-ThgLaKfH00"><img class="ani-hue"
+                <a href="https://www.youtube.com/watch?v=-ThgLaKfH00"
+                    onmouseover="document.getElementById('SFX1').play()"><img class="ani-hue"
                         alt="Kirby Dream Land 2 - Dark Castle" style="padding-top:1.5em;"
                         src="https://i.imgur.com/b7cfrkl.png">
                 </a>
@@ -538,7 +595,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-
+    </div>
 
 </body>
 
