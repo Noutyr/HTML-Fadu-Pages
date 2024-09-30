@@ -138,7 +138,7 @@ ul.sq>li {
 }
 
 .gtco-nav #gtco-logo {
-  font-size: 20px;
+  font-size: inherit;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
@@ -150,24 +150,28 @@ ul.sq>li {
   color: #f7f4f9;
 }
 
-.logo-full {
-  position: relative;
+.logo-pieces{
+  height: fit-content;
+  display:inline-block;
+  align-items: middle;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo-mini {
-  display: none;
+.logo{
+  height: 17pt;
 }
 
 @media screen and (max-width: 768px) {
-  .logo-full {
-    display: none;
-  }
-
-  .logo-mini {
+  .logo-icon {
     position: relative;
+    display: inherit;
     width: 2em;
     top: -.6em;
-    display: inherit;
+  }
+
+  .logo-txt {
+    display: none;
   }
 
   .gtco-nav .menu-1,
@@ -395,7 +399,7 @@ ul.sq>li {
 
 .gtco-cover {
   height: 700px;
-  background-size: cover;
+  background-size: auto, cover;
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
@@ -421,13 +425,22 @@ ul.sq>li {
 
 @media screen and (max-width: 768px) {
   .gtco-cover {
-    height: 800px;
+    height: 900px !important;
   }
 }
 
+
+@media screen and (max-width: 992px) {
+  .gtco-cover {
+    height: 1200px;
+    margin: inherit 120px inherit;
+  }
+}
+
+
 .gtco-cover .display-t,
 .gtco-cover .display-tc {
-  height: 900px;
+  height: 950px;
   display: table;
   width: 100%;
 }
@@ -696,7 +709,7 @@ form label {
 
 @media screen and (max-width: 768px) {
   #gtco-counter .feature-center {
-    margin-bottom: 0px;
+    margin-bottom: 4em;
   }
 }
 
@@ -745,7 +758,7 @@ form label {
   #gtco-started,
   #gtco-footer,
   .gtco-section {
-    padding: 3em 0;
+    padding: 7em 0;
   }
 }
 
@@ -873,7 +886,7 @@ form label {
 }
 
 .gtco-heading h2 {
-  font-size: 36px;
+  font-size: 30px;
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: bold;
@@ -926,7 +939,7 @@ form label {
   padding: 0;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   #gtco-testimonial .testimony-slide blockquote {
     width: 100%;
   }
@@ -951,6 +964,7 @@ form label {
 }
 
 .gtco-tabs .gtco-tab-nav {
+  
   clear: both;
   padding: 3px;
   float: left;
@@ -1124,7 +1138,7 @@ form label {
 #gtco-footer .gtco-footer-links {
   padding: 0;
   margin: 0;
-  color: #dbc0a6;
+  color: hsl(0, 0%, 60%);
 }
 
 #gtco-footer .gtco-footer-links li {
@@ -1134,7 +1148,7 @@ form label {
 }
 
 #gtco-footer .gtco-footer-links li a {
-  color: #dbc0a6;
+  color: hsl(0, 0%, 60%);
   text-decoration: none;
 }
 
@@ -1701,6 +1715,12 @@ form label {
   background-size: 50%;
 }*/
 
+.bg-diseno{
+  background-image: url(../images/siderighttop_bg-patt.png),  url(../images/bottomleft_bg-patt.png);
+  background-position: right top, left bottom; 
+  background-repeat: no-repeat; 
+  background-size: 40%;
+}
 
 .bg-caract {
   color: #f7f4f9;
@@ -1712,6 +1732,11 @@ form label {
   background-repeat: no-repeat;
 }
 
+@media screen and (max-width:768px){
+  .centerpls{
+  }
+}
+
 
 .hd-imgcover {
   height: auto;
@@ -1720,13 +1745,28 @@ form label {
 
 .wrap-hd {
   margin:auto;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-  .hd-imgcover {
-   top:-40%;
-   width: 80%;
-   margin:auto;
+  .wrap-hd {
+    top: -160px !important;
+    height: auto !important;
+  }
+
+  .hd-imgcover{
+    width: 90% !important;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .wrap-hd {
+    top: -430px
+  }
+
+  .hd-imgcover{
+    width: 70%;
   }
 }
 
@@ -1740,9 +1780,10 @@ form label {
 
 .bg-gradient2 {
   /*background-image: url(../images/deco-topright.png),linear-gradient(45deg, rgba(18,17,25,1) 0%, rgba(97,83,77,1) 100%);*/
-  background-image: linear-gradient(45deg, rgba(18, 17, 25, 1) 0%, rgba(97, 83, 77, 1) 100%);
+  /*background-image: linear-gradient(45deg, rgba(18, 17, 25, 1) 0%, rgba(97, 83, 77, 1) 100%);*/
+  background-color: rgba(18, 17, 25, 1);
   background-size: cover;
-  background-position: top;
+  background-position: top right, center;
   background-repeat: no-repeat;
 }
 
@@ -1752,6 +1793,7 @@ form label {
   background-size: 50%;
   background-position: bottom left;
   background-position-x: -29px, center;
+  
 }
 
 .img-divider {
@@ -1768,6 +1810,59 @@ form label {
   background-position-y: 80% !important;*/
 }
 
+@media screen and (max-width: 992px){
+
+  .img-divider{
+    background-size: auto 120% !important;
+    background-position-x: 20% !important;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+
+  .img-divider{
+    background-size: auto 100% !important;
+  }
+}
+
+
+@media screen and (max-width: 576px){
+
+  .img-divider{
+    background-size: ;
+  }
+}
+
+
+.dmode,
+.dmode h3 {
+  color: #f7f4f9;
+}
+
+.v-ali {
+  /*align-content: center;     */
+  margin-top: 250px;
+}
+
+.float-img {
+  height: 600px;
+}
+
+
+.float-img>.img-der {
+  position: relative;
+  height: auto;
+  margin-top: -10%;
+  width: 725px;
+}
+
+.float-img>.img-izq {
+  width: 725px;
+  margin-left: -800px;
+  margin-top: -11%;
+}
+
 
 
 .img-center
@@ -1776,35 +1871,65 @@ form label {
   margin-top:2em;
 }
 
-.dmode,
-.dmode h3 {
-  color: #f7f4f9;
+
+@media screen and (max-width: 992px){
+
+  .v-ali{    
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:20% !important;
+    padding-right:20% !important;
+  }
+
+  .float-img{
+    text-align: center;
+    margin-bottom:25% !important;
+  }
+
+  .float-img>.img-der{
+    margin-top: 8%;
+    width: 75%;
+  }
 }
 
-.v-ali {
-  display: table;
-  margin-top: 10%;
+
+@media screen and (max-width: 768px){
+
+  .v-ali{    
+    margin-top: 20px;
+    padding-left:10% !important;
+    padding-right:10% !important;
+  }
+
+  .float-img{
+    margin-bottom:7em !important;
+  }
+
+  .float-img>.img-der{
+    width: 80%;
+  }
 }
 
-.float-img {
-  height: 600px;
+
+@media screen and (max-width: 576px){
+
+  .v-ali{    
+  }
+
+  .float-img{
+    text-align: center;
+    margin-bottom:1em !important;
+  }
+
+  .float-img>.img-der{
+    margin-top: 8%;
+    width: 90%;
+  }
 }
 
-.float-img>img {
-  position: relative;
-  width: auto;
-}
 
-.float-img>.img-der {
-  margin-top: -10%;
-  height: 750px;
-}
 
-.float-img>.img-izq {
-  height: 750px;
-  margin-left: -800px;
-  margin-top: -11%;
-}
 
 .col-md-6 .know-text {
   padding-left: 15px;

@@ -71,17 +71,15 @@
 		<nav class="gtco-nav" role="navigation">
 			<div class="gtco-container">
 				<div class="row">
-					<div class="col-xs-2">
-						<div id="gtco-logo">
+					<div class="col-xs-4 col-md-3">
+						<div id="gtco-logo" class="logo-pieces">
 							<a href=" https://sennheiser.com/">
-								<img src="./images/logo_full.svg" class="logo-full">
-
-								<img src="./images/logo-mini.svg" class="logo-mini">
-
+								<img src="./images/logo-mini.svg" class="logo logo-icon">
+								<img src="./images/logo-txt.svg" class="logo logo-txt">
 							</a>
 						</div>
 					</div>
-					<div class="text-right menu-1">
+					<div class="col text-right menu-1">
 						<ul>
 							<li class="active"><a href="#hd490">HD 490 Pro</a></li>
 							<li class="active"><a href="#features">Características</a></li>
@@ -98,7 +96,7 @@
 		<section id="hd490"></section>
 		<header id="gtco-header" class="gtco-cover" role="banner">
 			<div class="gtco-container">
-				<div class="row gy-4 d-flex justify-content-center">
+				<div class="row gy-4">
 					<div class="col-md-6 text-left">
 						<div class="display-t">
 							<div class="display-tc animate-box" data-animate-effect="fadeIn">
@@ -110,13 +108,9 @@
 						</div>
 					</div>
 
-					<div class="col-md-6 wrap-hd ">
-						<div class="display-t">
-							<div class="display-tc animated-box">
-								<div class="wrap-hd">
-									<img src="images/hd-white.png" class="hd-imgcover">
-								</div>
-							</div>
+					<div class="col-md-6 wrap-hd justify-content-center">
+						<div class="display-tc animated-box wrap-hd">
+							<img src="images/hd-white.png" class="hd-imgcover">
 						</div>
 					</div>
 				</div>
@@ -125,7 +119,7 @@
 
 		<!-- seccion 4 caracteristicas-->
 		<section id="features"></section>
-		<div id="gtco-counter" class="gtco-bg gtco-counter bg-gradient">
+		<div id="gtco-counter" class="gtco-bg gtco-counter bg-gradient" style="padding-bottom:3em; height: auto;">
 			<div class="gtco-container">
 				<div class="row">
 					<div class="display-t">
@@ -135,8 +129,8 @@
 									<span class="icon">
 										<img src="./images/svg_son.svg">
 									</span>
-									<h2>Alta fidelidad</h2>
-									<span class="counter-label">Sonido de alta precisión</span>
+									<h2>Alta precisión</h2>
+									<span class="counter-label">Control total de las frecuencias de audio</span>
 
 								</div>
 							</div>
@@ -194,26 +188,27 @@
 			</div>
 		</div>
 
-		<section id="diseno"></section>
-		<!--Seccion Diseño -->
-		<div class="gtco-section"
-			style="background-image: url(./images/siderighttop_bg-patt.png), url(./images/bottomleft_bg-patt.png);background-position: right top, left bottom; background-repeat: no-repeat; background-size: 40%;">
-			<div class="gtco-container">
-				<div class="row animate-box">
-					<div class="col-md-6 bullet v-ali order-1 order-lg-2">
-						<h3 style="text-transform: uppercase; line-height: 0;">Diseño elegante</h3>
-						<i class="ul-bullet"></i>Elimina puntos de presión para ofrecer mayor comodidad.<br>
-						<i class="ul-bullet"></i>Flexibilidad y ligereza extraordinarias.<br>
-						<i class="ul-bullet"></i>Calidad de construcción y durabilidad.
-					</div>
-					<div class="col-md-6 float-img order-2 order-lg-1">
-						<img class="img-der" src="./images/hd-front.png">
+		<section id="diseno">
+			<!--Seccion Diseño -->
+			<div class="gtco-section bg-diseno">
+				<div class="gtco-container">
+					<div class="row animate-box">
+						<div class="col-md-6 bullet order-1 order-lg-2 v-ali"
+							style="padding-left: 30px; padding-right: 30px;">
+							<h3 style="text-transform: uppercase; line-height: 0.5; font-size: 30px;">Diseño elegante
+							</h3>
+							<i class="ul-bullet"></i>Elimina puntos de presión para ofrecer mayor comodidad.<br>
+							<i class="ul-bullet"></i>Flexibilidad y ligereza extraordinarias.<br>
+							<i class="ul-bullet"></i>Calidad de construcción y durabilidad.
+						</div>
+						<div class="col-md-6 float-img order-2 order-lg-1">
+							<img class="img-der" src="./images/hd-front.png">
+						</div>
 					</div>
 				</div>
+
 			</div>
-
-		</div>
-
+		</section>
 
 		<!--Seccion nuevo Portabilidad -->
 		<div class="gtco-section bg-caract" style="z-index:3;">
@@ -221,7 +216,7 @@
 				<div class="row animate-box text-center">
 					<div class="col">
 						<h2 style="color:#f7f4f9; text-transform: uppercase;">Llevalo a todas partes</h2>
-						<p>Movilidad y protección asegurada con el estuche rígido resistente a caídas.</p>
+						<p>Movilidad y protección asegurada con su estuche rígido resistente a caídas.</p>
 					</div>
 				</div>
 				<div class="row text-center">
@@ -244,19 +239,16 @@
 					</div>
 				</div>
 
-				<div class="row animate-box">
+				<div class="row animate-box" style="
+				padding-left: 15px;
+				padding-right: 15px;">
 
 					<div class="gtco-tabs">
 						<ul class="gtco-tab-nav">
-							<li class="active"><a href="#" data-tab="1"><span class="icon visible-xs"><i
-											class="icon-command"></i></span><span class="hidden-xs">Sonido de alta
-										fidelidad</span></a></li>
-							<li><a href="#" data-tab="2"><span class="icon visible-xs"><i
-											class="icon-bar-graph"></i></span><span
-										class="hidden-xs">Ergonomia</span></a>
+							<li class="active"><a href="#" data-tab="1"><span>Audio</span></a></li>
+							<li><a href="#" data-tab="2"><span>Ergonomia</span></a>
 							</li>
-							<li><a href="#" data-tab="3"><span class="icon visible-xs"><i
-											class="icon-bag"></i></span><span class="hidden-xs">Accesibilidad</span></a>
+							<li><a href="#" data-tab="3"><span>Accesibilidad</span></a>
 							</li>
 						</ul>
 
@@ -271,7 +263,6 @@
 								</div>
 								<div class="col-md-6">
 									<div class="know-text">
-										<h2>Sonido de alta fidelidad</h2>
 										<p>
 											En el corazón de cada copa de los HD 490 PRO hay un imán de neodimio
 											avanzado y
@@ -280,10 +271,9 @@
 											completos,
 											precisos y claramente definidos.</p>
 										<p>
-											Dos juegos de almohadillas intercambiables, cada una con una firma de sonido
-											única,
-											permiten trabajar durante horas en mezcla y producción, eliminando la fatiga
-											auditiva.
+											Dos juegos de almohadillas intercambiables, una para producción y otra para
+											mezcla, ayudan con la fatiga auditiva y te permiten localizar con precisión
+											las frecuencias.
 										</p>
 									</div>
 								</div>
@@ -294,7 +284,6 @@
 								</div>
 								<div class="col-md-6">
 									<div class="know-text">
-										<h2>Ergonomia</h2>
 										<p>La ergonomía fue meticulosamente diseñada, elimina puntos de presión,
 											mientras
 											que el
@@ -314,7 +303,6 @@
 								</div>
 								<div class="col-md-6">
 									<div class="know-text">
-										<h2>Accesibilidad</h2>
 										<p>Características de accesibilidad patentadas: copas derecha e izquierda con
 											guía
 											en Braille y almohadillas con ranuras para gafas.</p>
@@ -340,7 +328,7 @@
 		<div class="gtco-container">
 			<div class="row row-pb-md">
 				<div class="col-md-4 gtco-widget">
-					<h3>SENNHEISER</h3>
+					<img src="./images/logo-full.svg" height="22px">
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
 					<ul class="gtco-footer-links">
@@ -375,7 +363,7 @@
 			<div class="row copyright">
 				<div class="col-md-12">
 					<p class="pull-left" style="
-  color:#dbc0a6 !important;">
+  color:hsl(0, 0%, 60%); !important;">
 						<small class="block">&copy; Rafaela Cigna / TP4 / Diseño Belluccia II / Comisión: Agus, Dai
 							y Juli</small>
 						<small class="block">Designed by <a href="http://gettemplates.co/"
