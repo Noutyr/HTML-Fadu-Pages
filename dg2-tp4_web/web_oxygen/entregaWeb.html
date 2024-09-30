@@ -1,669 +1,600 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="" />
-    <meta
-      name="author"
-      content="" />
 
-    <title>Entrega Web de Producto - Belluccia II</title>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <!-- Bootstrap Core CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous" />
-    <link
-      rel="alternate icon"
-      class="js-site-favicon"
-      type="image/png"
-      href="entrega-favicon.ico" />
+  <title>Entrega Web de Producto - Belluccia II</title>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+
+  <!-- Bootstrap Original 3.3.7 Core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="entrega-favicon.ico" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- Google Fonts -->
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
-      rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
 
-    <style>
-      /*AUDIO*/
-      audio {
-        width: 100px;
-        margin-left: 15px;
-        justify-content: center;
-        text-align: center;
-        display: none;
-      }
+  <style>
+    /*AUDIO*/
+    audio {
+      width: 100px;
+      margin-left: 15px;
+      justify-content: center;
+      text-align: center;
+      display: none;
+    }
 
-      /* Color y cosas*/
+    /* Color y cosas*/
 
-      audio::-webkit-media-controls-play-button:hover {
-        background-color: #d4f1ff;
-        border-radius: 50%;
-      }
+    audio::-webkit-media-controls-play-button:hover {
+      background-color: #d4f1ff;
+      border-radius: 50%;
+    }
 
-      audio::-webkit-media-controls-volume-slider {
-        background-color: #cedaff;
-        color: white;
-        overflow: hover;
-        border-radius: 25px;
-        padding-left: 8px;
-        padding-right: 8px;
-        margin-left: -16px;
-      }
+    audio::-webkit-media-controls-volume-slider {
+      background-color: #cedaff;
+      color: white;
+      overflow: hover;
+      border-radius: 25px;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-left: -16px;
+    }
 
-      audio::-webkit-media-controls-mute-button {
-        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDQ3LjQ4IDQ5Ni40MSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzVjNjY4NDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9Il8yIiBkYXRhLW5hbWU9IjIiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTAsMTcwLjQ3djE1NS40NWMwLDMyLjI5LDI2LjE4LDU4LjQ3LDU4LjQ2LDU4LjQ3aDEwOC44NVYxMTIuMDJINTguNDZDMjYuMTgsMTEyLjAyLDAsMTM4LjE5LDAsMTcwLjQ3WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00MzguMDEsMi45M2MtNS44OS0zLjYxLTEzLjIyLTMuOTEtMTkuMzgtLjc3bC0yMTYuMywxMDkuODZ2MjcyLjM3bDIxNi4zLDEwOS44NmM2LjE2LDMuMTIsMTMuNDksMi44MiwxOS4zOC0uNzksNS44OC0zLjYxLDkuNDctMTAuMDIsOS40Ny0xNi45MlYxOS44NmMwLTYuOS0zLjU5LTEzLjMyLTkuNDctMTYuOTNaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=");
-      }
+    audio::-webkit-media-controls-mute-button {
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNDQ3LjQ4IDQ5Ni40MSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzVjNjY4NDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9Il8yIiBkYXRhLW5hbWU9IjIiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTAsMTcwLjQ3djE1NS40NWMwLDMyLjI5LDI2LjE4LDU4LjQ3LDU4LjQ2LDU4LjQ3aDEwOC44NVYxMTIuMDJINTguNDZDMjYuMTgsMTEyLjAyLDAsMTM4LjE5LDAsMTcwLjQ3WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00MzguMDEsMi45M2MtNS44OS0zLjYxLTEzLjIyLTMuOTEtMTkuMzgtLjc3bC0yMTYuMywxMDkuODZ2MjcyLjM3bDIxNi4zLDEwOS44NmM2LjE2LDMuMTIsMTMuNDksMi44MiwxOS4zOC0uNzksNS44OC0zLjYxLDkuNDctMTAuMDIsOS40Ny0xNi45MlYxOS44NmMwLTYuOS0zLjU5LTEzLjMyLTkuNDctMTYuOTNaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=");
+    }
 
-      audio::-webkit-media-slider-container {
-        border: 0px;
-      }
+    audio::-webkit-media-slider-container {
+      border: 0px;
+    }
 
-      audio::-webkit-media-controls-enclosure {
-        border-radius: 25px;
-        background-color: transparent;
-      }
+    audio::-webkit-media-controls-enclosure {
+      border-radius: 25px;
+      background-color: transparent;
+    }
 
-      /* Paso a ocultar cosas*/
+    /* Paso a ocultar cosas*/
 
-      audio::-webkit-media-controls-current-time-display {
-        display: none;
-      }
+    audio::-webkit-media-controls-current-time-display {
+      display: none;
+    }
 
-      audio::-webkit-media-controls-time-remaining-display {
-        display: none;
-      }
+    audio::-webkit-media-controls-time-remaining-display {
+      display: none;
+    }
 
-      audio::-webkit-media-controls-timeline {
-        display: none;
-      }
+    audio::-webkit-media-controls-timeline {
+      display: none;
+    }
 
-      /*AUDIO*/
+    /*AUDIO*/
 
-      /* FONTS FONTS FONTS FONTS */
-      .silkscreen-regular {
-        font-family: "Silkscreen", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
+    /* FONTS FONTS FONTS FONTS */
+    .silkscreen-regular {
+      font-family: "Silkscreen", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-      .silkscreen-bold {
-        font-family: "Silkscreen", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-      }
+    .silkscreen-bold {
+      font-family: "Silkscreen", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+    }
 
-      .tiny5-regular {
-        font-family: "Tiny5", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
+    .tiny5-regular {
+      font-family: "Tiny5", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-      .pixelify-sans {
-        /* <uniquifier>: Use a unique and descriptive class name*/
-        /* <weight>: Use a value from 400 to 700*/
-        font-family: "Pixelify Sans", system-ui;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-      }
+    .pixelify-sans {
+      /* <uniquifier>: Use a unique and descriptive class name*/
+      /* <weight>: Use a value from 400 to 700*/
+      font-family: "Pixelify Sans", system-ui;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-      .dotgothic16-regular {
-        font-family: "DotGothic16", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
+    .dotgothic16-regular {
+      font-family: "DotGothic16", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-      /* FONTS FONTS FONTS FONTS */
+    /* FONTS FONTS FONTS FONTS */
 
-      h1 {
-        font-family: "Silkscreen", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        margin-top: 0em !important;
-      }
+    h1 {
+      font-family: "Silkscreen", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      margin-top: 0em !important;
+    }
 
-      h2 {
-        font-family: "DotGothic16", sans-serif;
-        font-weight: 400;
-        font-size: 1.5em;
-        margin: 0px;
-      }
+    h2 {
+      font-family: "DotGothic16", sans-serif;
+      font-weight: 400;
+      font-size: 1.5em;
+      margin: 0px;
+    }
 
-      .win-header h2 {
-        font-family: "Tiny5", sans-serif;
-        text-transform: uppercase;
-        font-weight: 400;
-      }
+    .win-header h2 {
+      font-family: "Tiny5", sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
 
-      html,
-      body,
-      div,
-      .win-header,
-      .win-control,
-      .container {
+    html,
+    body,
+    div,
+    .win-header,
+    .win-control,
+    .container {
+      cursor: url(./images/cursor/cur_0.png), auto;
+      animation: cursor-idle 1.2s infinite;
+    }
+
+    @keyframes cursor-idle {
+      12.5% {
         cursor: url(./images/cursor/cur_0.png), auto;
-        animation: cursor-idle 1.2s infinite;
       }
 
-      @keyframes cursor-idle {
-        12.5% {
-          cursor: url(./images/cursor/cur_0.png), auto;
-        }
-
-        25% {
-          cursor: url(./images/cursor/cur_1.png), auto;
-        }
-
-        37.5% {
-          cursor: url(./images/cursor/cur_2.png), auto;
-        }
-
-        50% {
-          cursor: url(./images/cursor/cur_3.png), auto;
-        }
-
-        62.5% {
-          cursor: url(./images/cursor/cur_4.png), auto;
-        }
-
-        75% {
-          cursor: url(./images/cursor/cur_5.png), auto;
-        }
-
-        87.5% {
-          cursor: url(./images/cursor/cur_6.png), auto;
-        }
-
-        100% {
-          cursor: url(./images/cursor/cur_7.png), auto;
-        }
+      25% {
+        cursor: url(./images/cursor/cur_1.png), auto;
       }
 
-      a:hover {
-        text-decoration: none;
+      37.5% {
+        cursor: url(./images/cursor/cur_2.png), auto;
       }
 
-      @keyframes cursor-click {
-        0% {
-          cursor: url(./images/cursor/cur-click_0.png), auto;
-        }
-
-        33% {
-          cursor: url(./images/cursor/cur-click_1.png), auto;
-        }
-
-        66% {
-          cursor: url(./images/cursor/cur-click_2.png), auto;
-        }
-
-        100% {
-          cursor: url(./images/cursor/cur-click_3.png), auto;
-        }
+      50% {
+        cursor: url(./images/cursor/cur_3.png), auto;
       }
 
-      body {
-        background-size: 52px;
-        background-color: #2e2e46;
-        background-position: center;
-        animation: LinearMove 2s linear infinite;
-        -webkit-font-smoothing: none;
-
-        /*Font*/
-        font-family: "Tiny5", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+      62.5% {
+        cursor: url(./images/cursor/cur_4.png), auto;
       }
 
-      @keyframes LinearMove {
-        from {
-          background-position-x: 0px;
-          background-position-y: 0px;
-        }
-
-        to {
-          background-position-x: 104px;
-          /*Aca pongo el doble de pixeles en el eje X de la imagen*/
-          background-position-y: 52px;
-          /*Aca se pone la altura de la imagen */
-        }
+      75% {
+        cursor: url(./images/cursor/cur_5.png), auto;
       }
 
-      .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10%;
-        filter: drop-shadow(0px 10px 10px rgb(34, 54, 83));
+      87.5% {
+        cursor: url(./images/cursor/cur_6.png), auto;
       }
 
-      .win {
-        background-color: white;
-        padding: 5em;
-        padding-bottom: 1.5em;
-        margin: auto;
-        width: fit-content;
-
-        /*stylish*/
-
-        color: #38458f;
-        background-color: #e6efff;
-        border: 3px solid #383885;
+      100% {
+        cursor: url(./images/cursor/cur_7.png), auto;
       }
+    }
 
-      .win img {
-        padding-bottom: 0.5em;
-      }
+    a:hover {
+      text-decoration: none;
+    }
 
-      .ani-float {
-        animation: Up-Down 700ms ease-in-out infinite;
-        transition-duration: 2s;
-      }
-
-      .ani-float:hover {
-        animation: Up-Down 700ms ease-in-out infinite,
-          rainbow-glow 500ms linear infinite, cursor-click 0.5s infinite;
+    @keyframes cursor-click {
+      0% {
         cursor: url(./images/cursor/cur-click_0.png), auto;
-        transition-duration: 0.5s;
       }
 
-      .ani-hue {
-        transition-duration: 2s;
+      33% {
+        cursor: url(./images/cursor/cur-click_1.png), auto;
       }
 
-      .ani-hue:hover {
-        animation: rainbow-filter 2.5s linear infinite,
-          Up-Down 700ms ease-in-out infinite, cursor-click 0.5s infinite;
-        transition-duration: 1s;
+      66% {
+        cursor: url(./images/cursor/cur-click_2.png), auto;
       }
 
-      @keyframes rainbow-filter {
-        0% {
-          filter: hue-rotate(0deg);
-        }
+      100% {
+        cursor: url(./images/cursor/cur-click_3.png), auto;
+      }
+    }
 
-        50% {
-          filter: hue-rotate(360deg);
-        }
+    body {
+      background-size: 52px;
+      background-color: #2e2e46;
+      background-position: center;
+      animation: LinearMove 2s linear infinite;
+      -webkit-font-smoothing: none;
 
-        100% {
-          filter: hue-rotate(0deg);
-        }
+      /*Font*/
+      font-family: "Tiny5", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @keyframes LinearMove {
+      from {
+        background-position-x: 0px;
+        background-position-y: 0px;
       }
 
-      @keyframes Up-Down {
-        0% {
-          transform: translateY(0pt);
-        }
+      to {
+        background-position-x: 104px;
+        /*Aca pongo el doble de pixeles en el eje X de la imagen*/
+        background-position-y: 52px;
+        /*Aca se pone la altura de la imagen */
+      }
+    }
 
-        50% {
-          transform: translateY(-8pt);
-        }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      filter: drop-shadow(0px 10px 10px rgb(34, 54, 83));
+      padding: 10%;
+    }
 
-        100% {
-          transform: translateY(0pt);
-        }
+    .win {
+      background-color: white;
+      padding: 5em;
+      padding-bottom: 1.5em;
+      margin: auto;
+      width: fit-content;
+
+      /*stylish*/
+
+      color: #38458f;
+      background-color: #e6efff;
+      border: 3px solid #383885;
+    }
+
+    .win img {
+      padding-bottom: 0.5em;
+    }
+
+    .ani-float {
+      animation: Up-Down 700ms ease-in-out infinite;
+      transition-duration: 2s;
+    }
+
+    .ani-float:hover {
+      animation: Up-Down 700ms ease-in-out infinite,
+        rainbow-glow 500ms linear infinite, cursor-click 0.5s infinite;
+      cursor: url(./images/cursor/cur-click_0.png), auto;
+      transition-duration: 0.5s;
+    }
+
+    .ani-hue {
+      transition-duration: 2s;
+    }
+
+    .ani-hue:hover {
+      animation: rainbow-filter 2.5s linear infinite,
+        Up-Down 700ms ease-in-out infinite, cursor-click 0.5s infinite;
+      transition-duration: 1s;
+    }
+
+    @keyframes rainbow-filter {
+      0% {
+        filter: hue-rotate(0deg);
       }
 
-      @keyframes rainbow-glow {
-        0% {
-          filter: drop-shadow(0px 0px 25px yellow);
-        }
-
-        25% {
-          filter: drop-shadow(0px 0px 25px rgb(0, 255, 13));
-        }
-
-        50% {
-          filter: drop-shadow(0px 0px 25px rgb(0, 255, 255));
-        }
-
-        75% {
-          filter: drop-shadow(0px 0px 25px rgb(238, 111, 255));
-        }
-
-        100% {
-          filter: drop-shadow(0px 0px 25px yellow);
-        }
+      50% {
+        filter: hue-rotate(360deg);
       }
 
-      .win-header {
-        color: #c2fbff;
-        background-color: #5a5f99;
-        padding: 0.1em 0.1em 0.1em 1em;
-        border: 3px solid #383885;
-        border-bottom: none;
-        display: flex;
+      100% {
+        filter: hue-rotate(0deg);
+      }
+    }
+
+    @keyframes Up-Down {
+      0% {
+        transform: translateY(0pt);
       }
 
-      .win-header:hover {
-        animation: rainbow-text 1s linear infinite;
-        user-select: none;
+      50% {
+        transform: translateY(-8pt);
       }
 
-      .win-header-text {
-        margin-top: 0.4em;
-        flex-grow: 1;
+      100% {
+        transform: translateY(0pt);
+      }
+    }
+
+    @keyframes rainbow-glow {
+      0% {
+        filter: drop-shadow(0px 0px 25px yellow);
       }
 
-      .win-control {
-        /*Font*/
-        font-family: "Silkscreen", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        /* */
-        width: fit-content;
-        position: relative;
-        /*margin-top: 0.2em;*/
-        padding: 2px;
-        font-size: 20px;
-        background-color: transparent;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: right;
-        /*right: 0.2em;*/
-        right: 0;
-        -webkit-font-smoothing: none;
+      25% {
+        filter: drop-shadow(0px 0px 25px rgb(0, 255, 13));
       }
 
-      .square {
-        line-height: 1.2em;
-        text-align: center;
-        justify-content: center;
-        vertical-align: middle;
-        padding: 0;
-        color: #383885;
-        background-color: #a5aae9;
-        width: 25px;
-        margin: 2px;
-        height: 25px;
-        /*cursor: context-menu;*/
+      50% {
+        filter: drop-shadow(0px 0px 25px rgb(0, 255, 255));
       }
 
-      .square:hover {
-        color: #383885;
-        background-color: #c2fbff;
-        transition-duration: 0.5s;
-        animation: cursor-click 0.5s infinite;
+      75% {
+        filter: drop-shadow(0px 0px 25px rgb(238, 111, 255));
       }
 
-      .btn {
-        font-family: "tiny5", sans-serif;
-        text-transform: uppercase;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-        border: 3px inset;
-        border-radius: 0;
+      100% {
+        filter: drop-shadow(0px 0px 25px yellow);
+      }
+    }
+
+    .win-header {
+      color: #c2fbff;
+      background-color: #5a5f99;
+      padding: 0.1em 0.1em 0.1em 1em;
+      border: 3px solid #383885;
+      border-bottom: none;
+      display: flex;
+    }
+
+    .win-header:hover {
+      animation: rainbow-text 1s linear infinite;
+      user-select: none;
+    }
+
+    .win-header-text {
+      margin-top: 0.4em;
+      flex-grow: 1;
+    }
+
+    .win-control {
+      /*Font*/
+      font-family: "Silkscreen", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      /* */
+      width: fit-content;
+      position: relative;
+      /*margin-top: 0.2em;*/
+      padding: 2px;
+      font-size: 20px;
+      background-color: transparent;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: right;
+      /*right: 0.2em;*/
+      right: 0;
+      -webkit-font-smoothing: none;
+    }
+
+    .square {
+      line-height: 1.2em;
+      text-align: center;
+      justify-content: center;
+      vertical-align: middle;
+      padding: 0;
+      color: #383885;
+      background-color: #a5aae9;
+      width: 25px;
+      margin: 2px;
+      height: 25px;
+      /*cursor: context-menu;*/
+    }
+
+    .square:hover {
+      color: #383885;
+      background-color: #c2fbff;
+      transition-duration: 0.5s;
+      animation: cursor-click 0.5s infinite;
+    }
+
+    .btn {
+      font-family: "tiny5", sans-serif;
+      text-transform: uppercase;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      border: 3px inset;
+      border-radius: 0;
+    }
+
+    .btn-primary {
+      border: 3px rgb(116, 116, 207) outset;
+      background-color: #7d85d3;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      animation: rainbow-border 1s linear infinite,
+        rainbow-text 1s linear infinite, cursor-click 0.5s infinite;
+      background-color: #6d7cff;
+      color: #c2fbff;
+      transition-duration: 0.5s;
+    }
+
+    .rain-text {
+      animation: rainbow-text 1s linear infinite;
+    }
+
+    @keyframes rainbow-border {
+      0% {
+        border: 3px rgb(52, 52, 255) inset;
       }
 
-      .btn-primary {
-        border: 3px rgb(116, 116, 207) outset;
-        background-color: #7d85d3;
-        color: #ffffff;
+      25% {
+        border: 3px rgb(52, 231, 255) inset;
       }
 
-      .btn-primary:hover {
-        animation: rainbow-border 1s linear infinite,
-          rainbow-text 1s linear infinite, cursor-click 0.5s infinite;
-        background-color: #6d7cff;
-        color: #c2fbff;
-        transition-duration: 0.5s;
+      50% {
+        border: 3px rgb(241, 255, 52) inset;
       }
 
-      .rain-text {
-        animation: rainbow-text 1s linear infinite;
+      75% {
+        border: 3px rgb(255, 154, 255) inset;
       }
 
-      @keyframes rainbow-border {
-        0% {
-          border: 3px rgb(52, 52, 255) inset;
-        }
+      100% {
+        border: 3px rgb(52, 52, 255) inset;
+      }
+    }
 
-        25% {
-          border: 3px rgb(52, 231, 255) inset;
-        }
-
-        50% {
-          border: 3px rgb(241, 255, 52) inset;
-        }
-
-        75% {
-          border: 3px rgb(255, 154, 255) inset;
-        }
-
-        100% {
-          border: 3px rgb(52, 52, 255) inset;
-        }
+    @keyframes rainbow-text {
+      0% {
+        color: rgb(147, 242, 255);
       }
 
-      @keyframes rainbow-text {
-        0% {
-          color: rgb(147, 242, 255);
-        }
-
-        25% {
-          color: rgb(255, 154, 255);
-        }
-
-        50% {
-          color: rgb(159, 255, 191);
-        }
-
-        75% {
-          color: rgb(241, 255, 52);
-        }
-
-        100% {
-          color: rgb(147, 242, 255);
-        }
+      25% {
+        color: rgb(255, 154, 255);
       }
 
-      .btn-default {
-        border: 3px #b6d7ff outset;
-        background-color: #c2f8ff;
-        color: #383885;
+      50% {
+        color: rgb(159, 255, 191);
       }
 
-      .btn-default:hover {
-        border: 3px #338ac4 inset;
-        background-color: #57c7f3;
-        color: #ffffff;
-        transition-duration: 0.5s;
-        animation: cursor-click 0.5s infinite;
+      75% {
+        color: rgb(241, 255, 52);
       }
 
-      #miniweb {
-        display: none;
+      100% {
+        color: rgb(147, 242, 255);
       }
+    }
 
-      #body-bg {
-        background-image: none;
-      }
-    </style>
-  </head>
+    .btn-default {
+      border: 3px #b6d7ff outset;
+      background-color: #c2f8ff;
+      color: #383885;
+    }
 
-  <body id="body-bg">
-    <audio
-      id="SFX1"
-      src="https://files.catbox.moe/l8ysdy.wav"
-      type="audio/wav"
-      preload="auto"></audio>
-    <script>
-      var audio = document.getElementById("SFX1");
-      audio.volume = 0.05;
-    </script>
+    .btn-default:hover {
+      border: 3px #338ac4 inset;
+      background-color: #57c7f3;
+      color: #ffffff;
+      transition-duration: 0.5s;
+      animation: cursor-click 0.5s infinite;
+    }
 
-    <!-- Page Content -->
-    <div
-      class="container"
-      id="miniweb">
-      <div class="row">
-        <div class="win-header">
-          <div class="win-header-text">
-            <h2>Belluccia II</h2>
-          </div>
-          <div class="win-control">
-            <a
-              href="https://www.youtube.com/watch?v=qfxDEZX9K0o"
-              onmouseover="document.getElementById('SFX1').play()">
-              <div class="square">—</div>
-            </a>
-            <a
-              href="https://www.youtube.com/watch?v=SNEYkytd0es"
-              onmouseover="document.getElementById('SFX1').play()">
-              <div class="square">◻︎</div>
-            </a>
-            <a
-              href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
-              onmouseover="document.getElementById('SFX1').play()">
-              <div class="square">x</div>
-            </a>
-          </div>
+    #miniweb {
+      display: none;
+    }
+
+    #body-bg {
+      background-image: none;
+    }
+  </style>
+</head>
+
+<body id="body-bg">
+  <audio id="SFX1" src="https://files.catbox.moe/l8ysdy.wav" type="audio/wav" preload="auto"></audio>
+  <script>
+    var audio = document.getElementById("SFX1");
+    audio.volume = 0.05;
+  </script>
+
+  <!-- Page Content -->
+  <div class="container" id="miniweb">
+    <div class="row">
+      <div class="win-header">
+        <div class="win-header-text">
+          <h2>Belluccia II</h2>
         </div>
-        <div class="text-center win">
-          <a
-            href="https://www.youtube.com/watch?v=Rlyv51h18tQ"
-            onmouseover="document.getElementById('SFX1').play()"
-            ><img
-              class="ani-float"
-              src="https://i.imgur.com/Pgai5Xj.gif"
-              style="padding-bottom: 1.5em" /></a
-          ><br />
-          <audio
-            id="music"
-            controls
-            autoplay
-            preload="auto"
-            loop
-            controlsList="nodownload noplaybackrate novolume">
-            <source
-              src="REEEEEEE.mp3"
-              type="audio/mpeg"
-              class="aaud" />
-          </audio>
-          <!-- Audio volume -->
-          <script>
-            var audio = document.getElementById("music");
-            audio.volume = 0.2;
-          </script>
-
-          <h1>Rafaela Cigna</h1>
-          <h2 class="lead">Entrega Ejercicio Web de Producto</h2>
-          <p style="margin-top: 25px">
-            <a
-              class="btn btn-primary btn-lg"
-              href="https://noutyr.github.io/HTML-Fadu-Pages/dg2-tp4_web/web_oxygen/index.html"
-              onmouseover="document.getElementById('SFX1').play()"
-              >Sitio desarrollado</a
-            >
-            <a
-              class="btn btn-default btn-lg"
-              href="https://freehtml5.co/preview/?item=oxygen-free-website-template-using-bootstrap"
-              onmouseover="document.getElementById('SFX1').play()"
-              >Template OXYGEN</a
-            >
-          </p>
-          <a
-            href="https://www.youtube.com/watch?v=-ThgLaKfH00"
-            onmouseover="document.getElementById('SFX1').play()"
-            ><img
-              class="ani-hue"
-              alt="Kirby Dream Land 2 - Dark Castle"
-              style="padding-top: 1.5em"
-              src="https://i.imgur.com/b7cfrkl.png" />
+        <div class="win-control">
+          <a href="https://www.youtube.com/watch?v=qfxDEZX9K0o" onmouseover="document.getElementById('SFX1').play()">
+            <div class="square">—</div>
           </a>
-          <p class="tiny5-regular">↑ Música ↑</p>
+          <a href="https://www.youtube.com/watch?v=SNEYkytd0es" onmouseover="document.getElementById('SFX1').play()">
+            <div class="square">◻︎</div>
+          </a>
+          <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" onmouseover="document.getElementById('SFX1').play()">
+            <div class="square">x</div>
+          </a>
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container -->
-      <script src="/js/entregaweb.js"></script>
+      <div class="text-center win">
+        <a href="https://www.youtube.com/watch?v=Rlyv51h18tQ" onmouseover="document.getElementById('SFX1').play()"><img
+            class="ani-float" src="https://i.imgur.com/Pgai5Xj.gif" style="padding-bottom: 1.5em" /></a><br />
+        <audio id="music" controls autoplay preload="auto" loop controlsList="nodownload noplaybackrate novolume">
+          <source src="REEEEEEE.mp3" type="audio/mpeg" class="aaud" />
+        </audio>
+        <!-- Audio volume -->
+        <script>
+          var audio = document.getElementById("music");
+          audio.volume = 0.2;
+        </script>
 
-      <!-- jQuery Version 1.11.1 -->
+        <h1>Rafaela Cigna</h1>
+        <h2 class="lead">Entrega Ejercicio Web de Producto</h2>
+        <p style="margin-top: 25px">
+          <a class="btn btn-primary btn-lg"
+            href="https://noutyr.github.io/HTML-Fadu-Pages/dg2-tp4_web/web_oxygen/index.html"
+            onmouseover="document.getElementById('SFX1').play()">Sitio desarrollado</a>
+          <a class="btn btn-default btn-lg"
+            href="https://freehtml5.co/preview/?item=oxygen-free-website-template-using-bootstrap"
+            onmouseover="document.getElementById('SFX1').play()">Template OXYGEN</a>
+        </p>
+        <a href="https://www.youtube.com/watch?v=-ThgLaKfH00" onmouseover="document.getElementById('SFX1').play()"><img
+            class="ani-hue" alt="Kirby Dream Land 2 - Dark Castle" style="padding-top: 1.5em"
+            src="https://i.imgur.com/b7cfrkl.png" />
+        </a>
+        <p class="tiny5-regular">↑ Música ↑</p>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <script src="/js/entregaweb.js"></script>
+
+    <!-- jQuery Version 1.11.1 --f>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
       <!-- Bootstrap Core JavaScript -->
-      <script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+  </div>
 
-    <div
-      class="container"
-      id="pop-up">
-      <div class="row">
-        <div class="win-header">
-          <div class="win-header-text">
-            <h2>Autenticación de docente</h2>
-          </div>
-          <div class="win-control">
-            <a
-              href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
-              onmouseover="document.getElementById('SFX1').play()">
-              <div class="square">x</div>
-            </a>
-          </div>
+  <div class="container" id="pop-up">
+    <div class="row">
+      <div class="win-header">
+        <div class="win-header-text">
+          <h2>Autenticación de docente</h2>
         </div>
-        <div class="text-center win">
-          <h1 class="ani-float">Alto ahí</h1>
-          <h2 class="lead"
-            >¿Estás seguro de ver una entrega con
-            <strong class="rain-text">muchisimo</strong> flasheo en la
-            intro?</h2
-          >
-          <p>PD: Tiene música</p>
-          <script>
-            function showContent() {
-              document.getElementById("miniweb").style.cssText =
-                "display:flex;";
-              document.getElementById("pop-up").style.cssText = "display:none;";
-              document.getElementById("body-bg").style.cssText =
-                "background-image: url(bg.png);";
-              document.getElementById("music").play();
-            }
-          </script>
-          <p style="margin-top: 25px">
-            <span
-              class="btn btn-primary btn-lg"
-              onmouseover="document.getElementById('SFX1').play()"
-              onclick="showContent();"
-              >Entrar</span
-            >
-          </p>
+        <div class="win-control">
+          <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" onmouseover="document.getElementById('SFX1').play()">
+            <div class="square">x</div>
+          </a>
         </div>
-        <!-- /.row -->
       </div>
+      <div class="text-center win">
+        <h1 class="ani-float">Alto ahí</h1>
+        <h2 class="lead">
+          ¿Estás seguro de ver una entrega con
+          <strong class="rain-text">muchísimo</strong> flasheo en la intro?
+        </h2>
+        <p>PD: Tiene música</p>
+        <script>
+          function showContent() {
+            document.getElementById("miniweb").style.cssText =
+              "display:flex;";
+            document.getElementById("pop-up").style.cssText = "display:none;";
+            document.getElementById("body-bg").style.cssText =
+              "background-image: url(bg.png);";
+            document.getElementById("music").play();
+          }
+        </script>
+        <p style="margin-top: 25px">
+          <span class="btn btn-primary btn-lg" onmouseover="document.getElementById('SFX1').play()"
+            onclick="showContent();">Entrar</span>
+        </p>
+      </div>
+      <!-- /.row -->
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
