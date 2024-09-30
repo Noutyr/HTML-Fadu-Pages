@@ -1756,7 +1756,17 @@ form label {
 
 @media screen and (max-width: 992px) {
   .wrap-hd {
-    top: -430px
+    top: -500px;
+  }
+
+  .hd-imgcover {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrap-hd {
+    top: -50px !important;
   }
 
   .hd-imgcover {
@@ -1805,6 +1815,9 @@ form label {
 }
 
 @media screen and (max-width: 992px) {
+  .gtco-cover {
+    background-position-x: 80% !important;
+  }
 
   .img-divider {
     background-size: auto 120% !important;
@@ -1814,6 +1827,9 @@ form label {
 
 
 @media screen and (max-width: 768px) {
+  .gtco-cover {
+    background-position-x: 80% !important;
+  }
 
   .img-divider {
     background-size: auto 100% !important;
@@ -1822,6 +1838,10 @@ form label {
 
 
 @media screen and (max-width: 576px) {
+
+  .gtco-cover {
+    background-position-x: 80% !important;
+  }
 
   .img-divider {
     background-size: ;
