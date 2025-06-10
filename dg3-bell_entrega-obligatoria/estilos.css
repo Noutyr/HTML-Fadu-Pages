@@ -1,0 +1,462 @@
+/*Este es un comentario de CSS*/
+/*Los comentarios de CSS no se renderizan en la página*/
+/*Todas las declaraciones de estilo se encuentran en el CSS, el HTML es para contenido únicamente*/
+
+/*Reseteo de márgenes de todos los elementos para todos los navegadores*/
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+/*Importar tipografía de google fonts vía @import (sin etiquetas <style>)*/
+
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Road+Rage&family=Special+Elite&display=swap");
+/*---- El import no me funciono, fui al <link> porque no me quedo de otra, F*/
+
+/*Esto me permite utilizar la tipografía en todo el contenido de body. Como standard vamos a usar la 100*/
+
+body {
+  /*Declaración de tipografía*/
+  font-family: "IM Fell French Canon", serif;
+  /*Declaración de peso de Tipografía*/
+  font-weight: 100;
+  /*Declaración de color de fondo del body*/
+  background-color: black;
+  /*Declaración del color de la tipografía en el body*/
+  color: white;
+}
+
+/*ESTILOS DE CUADRADOS DE COLORES*/
+
+/*Este es un id único en el HTML, representado por #nombre*/
+/*Este color está declarado en #Hex*/
+#color1 {
+  /*No way I'm going to change the color1 bro*/
+  animation: rainbow-bg1 4s linear infinite;
+}
+/*Este color está declarado con una palabra clave*/
+#color2 {
+  /*No way I'm going to put a color2 mom*/
+  animation: rainbow-bg2 4s linear infinite;
+}
+/*Este color está declarado con valores RGB (XX, XX, XX)*/
+#color3 {
+  /*No way I'm going to make a color3 dad*/
+  animation: rainbow-bg3 4s linear infinite;
+}
+/*Este color está declarado en RGB, y tiene transparencia de 0.705*/
+#color4 {
+  /*No way I'm not going to make it rainbow son*/
+  animation: rainbow-bg4 4s linear infinite;
+}
+
+/*ESTILOS DE BARRA DE NAVEGACIÓN*/
+nav {
+  /*Color de texto declarado en #Hex*/
+  color: #ffffff;
+}
+
+/*ESTILOS LINKS EN BARRA DE NAVEGACIÓN*/
+nav a {
+  /*Color te texto*/
+  color: #ffffff;
+  /*Decoración de texto: subrayado | tachado | etc.*/
+  text-decoration: none;
+  /*Tipografía*/
+  font-family: "Special Elite", system-ui;
+  /*Peso de la tipografía (tiene que estar linkeada la variable)*/
+  font-weight: 700;
+  /*Espaciado interno*/
+  padding: 25px;
+  /*Tiempo de transición animaciones de hover (mirar abajo)*/
+  transition: color 1s;
+  /*Transformar texto a Mayúsculas*/
+  text-transform: uppercase;
+}
+
+/*Cambios al pasar el mouse sobre el elemento (hover)*/
+nav a:hover {
+  /*Cambio de color*/
+  color: #7c7c7c;
+}
+
+/*ESTILOS LOGO BARRA DE NAVEGACIÓN*/
+#logo img {
+  /*Altura de imagen relativa al espacio disponible: "100% del espacio"*/
+  height: 100%;
+  /*Altura máxima que puede alcanzar la imagen: 80px*/
+  max-height: 80px;
+  /*Posicionamiento 10px abajo de dónde debería estar*/
+  position: relative;
+  top: 10px;
+}
+
+/*ESTILOS DE BANNER*/
+.banner {
+  /*Imagen de fondo*/
+  background-image: url(media/nurple-static-bright.gif);
+  background-color: rgb(85, 85, 85);
+  animation: rainbow-dark-bg 4s linear infinite;
+  background-blend-mode: multiply;
+  /*Posición del fondo x|y*/
+  background-position: center bottom;
+  /*¿Repetir fondo? (tramas)*/
+  background-repeat: repeat;
+  /*Tamaño de fondo: cubrir todo el espacio*/
+  background-size: auto;
+  /*Ancho: cubrir el 100%*/
+  width: 100%;
+  /*Alto: cubrir el 100% de la pantalla que o visualiza*/
+  height: 100vh;
+}
+
+.banner_info {
+  /*Color de texto*/
+  color: white;
+  /*Centrar texto*/
+  text-align: center;
+  /*Transformar texto a mayúsuclas*/
+  text-transform: uppercase;
+  /*Sombra: offset-x | offset-y | blur-radius | color */
+  text-shadow: 2px 2px 3px black;
+  /*Espaciado interior*/
+  padding: 0px 0px 100px 0px;
+}
+
+/*ESTILOS DEL BOTON*/
+.btn {
+  font-family: "Special Elite", system-ui;
+  /*Color de fondo*/
+  background-color: none;
+  border: 2px red;
+  border-style: inset dashed outset;
+  border-radius: 0;
+  /*Color de tipografía*/
+  color: red;
+  /*Decoracion del texto*/
+  text-decoration: none;
+  /*Alineación del texto*/
+  text-align: center;
+  /*Borde redondeado*/
+  /*  border-radius: 0;*/
+  /*Tamaño de fuente*/
+  font-size: 1em;
+  /*PEso de fuente*/
+  font-weight: 400;
+  /*Espaciado interno*/
+  padding: 1.2rem 1.5rem 0.8em;
+  /*Cambios al hover por tiempo (1s)*/
+  transition: all 1s;
+  line-height: 0;
+  display: inline-block;
+  text-shadow: none;
+}
+
+/*Al pasar el mouse por arriba*/
+.btn:hover {
+  /*Cambio de color de fondo*/
+  background-color: rgb(255, 0, 0);
+  border: 2px red;
+  border-style: inset dashed outset;
+}
+
+h1 {
+  font-family: "Road Rage", sans-serif;
+  font-weight: 400;
+  font-size: 4em;
+  line-height: 0.8em;
+  font-style: normal;
+}
+
+/*ESTRUCTURA de la plantilla | Tocar bajo su propio riesgo*/
+.col {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+}
+.colb {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-content: center;
+}
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+}
+nav {
+  position: absolute;
+  top: 0;
+  width: 99%;
+}
+.colores {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.color {
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+h1 {
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.icon {
+  width: 80%;
+  animation: shake 0.3s linear infinite;
+}
+@media only screen and (max-width: 600px) {
+  nav a {
+    display: none;
+  }
+}
+
+.lmao {
+  display: none;
+  text-align: center;
+  margin: auto;
+}
+
+/*Animations*/
+
+.rainbow-text {
+  animation: rainbow-text 3s linear infinite;
+}
+
+.white-txt {
+  color: rgba(0, 0, 0, 0);
+  offset-position: center;
+  line-height: 0px;
+  z-index: 300;
+  transition: 1s;
+}
+
+.white-txt:hover {
+  color: rgb(0, 0, 0);
+  offset-position: center;
+  line-height: 0px;
+  z-index: 300;
+}
+
+@keyframes rainbow-text {
+  0% {
+    color: #2f00ff;
+  }
+
+  25% {
+    color: rgb(255, 0, 255);
+  }
+
+  50% {
+    color: rgb(255, 255, 0);
+  }
+
+  75% {
+    color: rgb(0, 255, 0);
+  }
+
+  100% {
+    color: #2f00ff;
+  }
+}
+
+@keyframes rainbow-border {
+  0%,
+  100% {
+    border: 1px rgb(52, 52, 255) inset;
+  }
+
+  25% {
+    border: 1px rgb(52, 231, 255) inset;
+  }
+
+  50% {
+    border: 1px rgb(238, 255, 0) inset;
+  }
+
+  75% {
+    border: 1px rgb(255, 154, 255) inset;
+  }
+}
+
+@keyframes rainbow-bg {
+  0%,
+  100% {
+    background-color: rgb(52, 52, 255);
+  }
+
+  25% {
+    background-color: rgb(52, 231, 255);
+  }
+
+  50% {
+    background-color: rgb(241, 255, 52);
+  }
+
+  75% {
+    background-color: rgb(255, 154, 255);
+  }
+}
+
+@keyframes rainbow-bg1 {
+  0%,
+  100% {
+    background-color: rgb(255, 0, 0);
+  }
+
+  25% {
+    background-color: rgb(225, 0, 255);
+  }
+
+  50% {
+    background-color: rgb(255, 160, 52);
+  }
+
+  75% {
+    background-color: rgb(255, 154, 255);
+  }
+}
+
+@keyframes rainbow-bg2 {
+  0%,
+  100% {
+    background-color: rgb(21, 255, 0);
+  }
+
+  25% {
+    background-color: rgb(52, 255, 255);
+  }
+
+  50% {
+    background-color: rgb(255, 0, 212);
+  }
+
+  75% {
+    background-color: rgb(255, 251, 0);
+  }
+}
+
+@keyframes rainbow-bg3 {
+  0%,
+  100% {
+    background-color: rgb(4, 0, 255);
+  }
+
+  25% {
+    background-color: rgb(0, 225, 255);
+  }
+
+  50% {
+    background-color: rgb(0, 255, 55);
+  }
+
+  75% {
+    background-color: rgb(204, 0, 255);
+  }
+}
+
+@keyframes rainbow-bg4 {
+  0%,
+  100% {
+    background-color: rgb(94, 94, 94);
+  }
+
+  25% {
+    background-color: rgb(175, 192, 194);
+  }
+
+  50% {
+    background-color: rgb(189, 164, 164);
+  }
+
+  75% {
+    background-color: rgb(42, 41, 46);
+  }
+}
+
+@keyframes rainbow-dark-bg {
+  0%,
+  100% {
+    background-color: rgb(20, 20, 131);
+  }
+
+  25% {
+    background-color: rgb(0, 159, 180);
+  }
+
+  50% {
+    background-color: rgb(155, 101, 0);
+  }
+
+  75% {
+    background-color: rgb(136, 0, 136);
+  }
+}
+
+@keyframes LinearMove {
+  0% {
+    transform: translateY(0);
+    transform: translatex(-2px);
+  }
+  25% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-2px);
+    transform: translatex(-2px);
+  }
+  75% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+    transform: translatex(-2px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes horishake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
