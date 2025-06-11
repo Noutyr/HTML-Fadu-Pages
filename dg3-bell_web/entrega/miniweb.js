@@ -30,7 +30,8 @@ function showContent() {
     miniweb.style.display = "block";
     setTimeout(() => {
       miniweb.style.opacity = "1";
-      miniweb.style.animation = "LinearMove 2s linear infinite";
+      miniweb.style.animation =
+        "LinearMove 2s linear infinite, cursor-idle 1.2s infinite";
       moveElement.style.cssText = `
                     animation: LinearMove 2s linear infinite, bright-up 0.5s ease, cursor-click 0.5s !important;
                     background-color: #919191;

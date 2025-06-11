@@ -218,9 +218,9 @@ a {
 html,
 body,
 div,
-.window,
 .window-buttons,
-.window-header {
+.window-header,
+.container {
   cursor: url(./cursor/cur_0.png), auto;
   animation: cursor-idle 1.2s infinite;
 }
