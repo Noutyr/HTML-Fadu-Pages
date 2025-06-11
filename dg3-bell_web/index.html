@@ -15,6 +15,7 @@
             background-repeat: repeat;
             background-color: rgb(63, 63, 63);
             background-blend-mode: darken;
+            transition:1s;
         }
 
         @keyframes bright-up {
@@ -47,6 +48,8 @@
             padding: 30px 30px 30px 30px;
             box-sizing: border-box;
             background: #dfdfdf;
+            background-image: url('entrega/starsbgbig_inv.gif');
+            background-blend-mode: screen;        
             /* Bold Shadow Big */
             box-shadow: 23px 24px 0px #666666;
             /* Inside auto layout */
@@ -54,6 +57,7 @@
             order: 3;
             flex-grow: 0;
             z-index: 3;
+            transition:0.5s;
 
             /*Items*/
             text-align: center;
@@ -114,9 +118,22 @@
 
         /*Mechanism*/
         #miniweb {
+            opacity: 0;
             display: none;
+            top: 0;
+            left: 0;
         }
 
+        #popup{
+            opacity:1;
+            transition: opacity 0.2s ease, height 0.2s ease;
+        }
+
+        #miniweb.mostrar, #pop-up.mostrar {
+            opacity: 1;
+            height: auto;
+            display: block;
+        }
         /*Animations*/
 
 
@@ -265,6 +282,62 @@
             }
         }
     </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>    
+    
+    <script>
+        // Por que <Audio> me deja un gap feo
+        var sound = new Howl({
+            src: ['entrega/music.ogg', 'entrega/music.mp3'],
+            autoplay: false,
+            loop: true,
+            volume: 0.5,
+            html5: false,          
+            // Para hacer el loop perfecto sin gap
+            onend: function() {
+                restartLoop();
+            }
+        });
+        
+        // Muestra el contenido escondido, cierra el popup, reproduce la musica, mueve el bg
+        function showContent() {
+        const popup = document.getElementById("pop-up");
+        const miniweb = document.getElementById("miniweb");
+        const moveElement = document.getElementById("move-fuckingplese");
+        
+        // Primero ocultar el pop-up con animación
+        popup.style.opacity = '0';
+        //popup.style.transform = 'scale(0.95)';
+        
+        // Cuando termine la transición de ocultar
+        popup.addEventListener('transitionend', function handler() {
+            popup.removeEventListener('transitionend', handler);
+            popup.style.display = 'none';
+            
+            // Mostrar miniweb
+            miniweb.style.display = 'block';
+            setTimeout(() => {
+            miniweb.style.opacity = '1';
+            miniweb.style.animation = 'LinearMove 2s linear infinite';         
+                moveElement.style.cssText = `
+                    animation: LinearMove 2s linear infinite, bright-up 0.5s ease, cursor-click 0.5s !important;
+                    background-color: #919191;
+                `;
+            sound.play();   
+            }, 20);
+        });
+        
+        // Animaciones adicionales
+        
+        // Control de audio
+        //sound.play();
+        setInterval(() => {
+            if (sound.playing() && sound.seek() >= 19.266) {
+            sound.seek(0);
+            }
+        }, 50);
+        }
+                    
+    </script>
 </head>
 
 <body id="move-fuckingplese">
@@ -272,11 +345,8 @@
     <audio id="SFX1" src="https://files.catbox.moe/l8ysdy.wav" type="audio/wav" preload="auto"></audio>
     <script>
         var audio = document.getElementById("SFX1");
-        audio.volume = 0.05;
+        audio.volume = 0.05;        
     </script>
-    <audio repeat>
-        <source src="/entrega/music.mp3" type="audio/mp3">
-    </audio>
 
     <main>
         <div class="container d-flex flex-column align-items-center justify-content-center"
@@ -313,15 +383,6 @@
                         ¿Sos o te creés un <strong class="rain-text">docente</strong>?
 
                     </h2>
-                    <script>
-                        function showContent() {
-                            document.getElementById("miniweb").style.cssText =
-                                "display:block;";
-                            document.getElementById("pop-up").style.cssText = "display:none;";
-                            document.getElementById("music").play();
-                            document.getElementById("move-fuckingplese").style.cssText = "animation: LinearMove 2s linear infinite, bright-up 0.5s linear, cursor-click 0.5s !important; background-color: #919191;"
-                        }
-                    </script>
                     <div class="button-container" style="margin-top:15px;">
                         <p>
                             <span class="btn btn-primary" onmouseover="document.getElementById('SFX1').play()"
@@ -338,20 +399,8 @@
         </div>
 
         </div>
-
-        <audio id="music" autoplay loop>
-            <source src="./entrega/music.mp3" type="audio/mpeg" class="aaud" />
-        </audio>
-
     </main>
 </body>
-<script>
-    var audio = document.getElementById("music");
-    audio.volume = 0.5;
-    function playMusic() {
-        document.getElementById("music").play();
-    }
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
